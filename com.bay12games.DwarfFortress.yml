@@ -1,0 +1,17 @@
+app-id: com.bay12games.DwarfFortress
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+runtime-extensions:
+  - org.freedesktop.Platform.GL.default
+sdk: org.freedesktop.Sdk
+command: /app/dwarf-fortress/run_df
+finish-args:
+  - --socket=fallback-x11
+  - --share=ipc
+  - --share=network
+  - --device=dri
+  - --socket=pulseaudio
+  - --socket=session-bus
+modules:
+  - shared-modules/SDL2/SDL2-with-libdecor.json
+  - modules/dwarf-fortress/dwarf-fortress.yml

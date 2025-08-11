@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Starsector
+Icon=com.bay12games.DwarfFortress
+Exec=/app/startup.sh
+Categories=Game;
+StartupWMClass=Starsector

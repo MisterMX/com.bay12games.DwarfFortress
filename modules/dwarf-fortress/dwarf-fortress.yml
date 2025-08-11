@@ -1,0 +1,32 @@
+# Dwarf Fortress
+name: dwarf-fortress
+buildsystem: simple
+no-autogen: true
+build-commands:
+  # entrypoint
+  - install startup.sh /app
+
+  # Desktop icons
+  - mkdir -p /app/share/applications /app/share/icons/hicolor/256x256/apps/
+  - install com.bay12games.DwarfFortress.desktop /app/share/applications/
+  - install com.bay12games.DwarfFortress.png /app/share/icons/hicolor/256x256/apps/
+
+  # DF itself
+  - mkdir /app/dwarf-fortress
+  - mv * /app/dwarf-fortress
+  - chmod +x /app/dwarf-fortress/run_df
+
+  # Link mod dir to user
+  - rmdir /app/dwarf-fortress/data/installed_mods
+  - ln -s ~/.var/app/com.bay12games.DwarfFortress/data/installed_mods
+sources:
+  - type: archive
+    strip-components: 0
+    url: https://www.bay12games.com/dwarves/df_52_03_linux.tar.bz2
+    sha512: fb21e1ad09eac75f62413dcab2fab2f8bb40744302bac23298500aac6a9fd9dcdee0a342807e95b2c15337fe8b69c836d70d881fab15b531bc314e49e0be7e8d
+  - type: file
+    path: startup.sh
+  - type: file
+    path: com.bay12games.DwarfFortress.desktop
+  - type: file
+    path: com.bay12games.DwarfFortress.png
