@@ -1,0 +1,8 @@
+name: launcher
+buildsystem: simple
+no-autogen: true
+sources:
+  - type: file
+    path: launcher.sh
+build-commands:
+  - mv launcher.sh /app/

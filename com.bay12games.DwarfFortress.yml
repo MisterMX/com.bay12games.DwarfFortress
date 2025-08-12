@@ -4,7 +4,7 @@ runtime-version: '24.08'
 runtime-extensions:
   - org.freedesktop.Platform.GL.default
 sdk: org.freedesktop.Sdk
-command: /app/dwarf-fortress/run_df
+command: /app/launcher.sh
 finish-args:
   - --socket=fallback-x11
   - --share=ipc
@@ -15,3 +15,5 @@ finish-args:
 modules:
   - shared-modules/SDL2/SDL2-with-libdecor.json
   - modules/dwarf-fortress/dwarf-fortress.yml
+  - modules/dfhack/dfhack.yml
+  - modules/launcher/launcher.yml

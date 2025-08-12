@@ -1,0 +1,13 @@
+name: dfhack
+buildsystem: simple
+no-autogen: true
+sources:
+  - type: archive
+    strip-components: 0
+    url: https://github.com/DFHack/dfhack/releases/download/52.03-r1.1/dfhack-52.03-r1.1-Linux-64bit.tar.bz2
+    sha256: dc968d94cd71975412fdf863b5379fcefb877e6b8779f3539987340c9ccaa6e3
+  - type: file
+    path: start.dfhack.sh
+build-commands:
+  - mv * /app/dwarf-fortress/
+  - ln -s ~/.var/app/com.bay12games.DwarfFortress/data/dfhack-config /app/dwarf-fortress/dfhack-config
